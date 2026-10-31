@@ -1,0 +1,160 @@
+.product-page {
+  padding: 24px;
+}
+
+.product-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Left sidebar */
+.category-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.category-sidebar h2 {
+  margin-top: 0;
+}
+
+.category-sidebar button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 6px;
+  text-align: left;
+  text-transform: capitalize;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.category-sidebar button:hover {
+  background: #f0f0f0;
+}
+
+.category-sidebar button.active {
+  background: #222;
+  color: white;
+}
+
+/* Right product section */
+.product-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.product-card h3 {
+  font-size: 16px;
+}
+
+.category-sidebar details {
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+}
+
+.category-sidebar summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  cursor: pointer;
+}
+
+.filter-option input {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    flex-direction: column;
+  }
+
+  .category-sidebar {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.price-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.price-filter label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.price-filter input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rating-filter {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 5px;
+}
+
+.rating-filter .filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.rating-filter input[type="radio"] {
+  accent-color: #222;
+  cursor: pointer;
+}
